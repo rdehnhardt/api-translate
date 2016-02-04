@@ -9,6 +9,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 
     Route::get('translates', ['as' => 'translates.index', 'uses' => 'TranslatesController@index']);
     Route::get('translates/{id}', ['as' => 'translates.edit', 'uses' => 'TranslatesController@edit']);
+    Route::post('translates/{id}', ['as' => 'translates.store', 'uses' => 'TranslatesController@store']);
 });
 
 Route::group(['middleware' => 'api', 'prefix' => 'api', 'namespace' => 'Api'], function () {
