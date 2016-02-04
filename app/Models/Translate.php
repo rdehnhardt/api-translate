@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class Translate extends Authenticatable
+class Translate extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -19,6 +19,14 @@ class Translate extends Authenticatable
      * @var array
      */
     protected $hidden = ['id', 'updated_at', 'created_at'];
+
+    /**
+     * The number of models to return for pagination.
+     *
+     * @var int
+     */
+    protected $perPage = 10;
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

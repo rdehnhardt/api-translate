@@ -11,6 +11,11 @@
                         <h3 class="panel-title">{{ trans('texts.translations-list') }}</h3>
                     </div>
                     <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" value="{{ request('q') }}" name="q" placeholder="{{ trans('texts.search') }}" />
+                            </div>
+                        </form>
                         <table class="table table-hover">
                             <thead>
                             <tr>

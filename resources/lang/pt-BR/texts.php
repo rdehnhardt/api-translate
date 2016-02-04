@@ -6,6 +6,7 @@ return [
     'save' => 'Salvar',
     'label' => 'Etiqueta',
     'remove' => 'Remover',
+    'search' => 'Pesquisar',
     'name' => 'Nome',
     'home' => 'Início',
     'language' => 'Idioma',

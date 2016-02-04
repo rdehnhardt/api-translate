@@ -7,6 +7,7 @@ use App\Http\Requests\MessagesRequest;
 use App\Models\Locale;
 use App\Models\Message;
 use App\Models\Translate;
+use Request;
 
 class TranslatesController extends Controller
 {
@@ -17,7 +18,11 @@ class TranslatesController extends Controller
      */
     public function index()
     {
-        $records = Translate::paginate();
+        if (Request::get('q')) {
+            $records = Translate::where('key', 'LIKE', '%' . Request::get('q') . '%')->paginate();
+        } else {
+            $records = Translate::paginate();
+        }
 
         return view('translates.index', compact('records'));
     }
