@@ -1,0 +1,8 @@
+{
+  "name": "app/translate",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "bootswatch": "^3.3.6+1",
+    "flag-icon-css": "^1.1.0"
+  }
+}
