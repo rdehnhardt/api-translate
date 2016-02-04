@@ -35,11 +35,11 @@
                             @endforelse
                             </tbody>
                         </table>
-
-                        <div class="">
-                            {{ $records->render() }}
-                        </div>
                     </div>
+                </div>
+
+                <div class="text-right">
+                    @include('pagination', ['paginator' => $records])
                 </div>
             </div>
         </div>

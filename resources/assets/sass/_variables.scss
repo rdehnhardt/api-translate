@@ -448,6 +448,23 @@ $pagination-disabled-color: $gray-lighter !default;
 $pagination-disabled-bg: lighten($brand-success, 15%) !default;
 $pagination-disabled-border: transparent !default;
 
+//== Pagination Primary
+$pagination-primary-color: #fff !default;
+$pagination-primary-bg: $brand-primary !default;
+$pagination-primary-border: transparent !default;
+
+$pagination-primary-hover-color: #fff !default;
+$pagination-primary-hover-bg: darken($brand-primary, 15%) !default;
+$pagination-primary-hover-border: transparent !default;
+
+$pagination-primary-active-color: #fff !default;
+$pagination-primary-active-bg: darken($brand-primary, 15%) !default;
+$pagination-primary-active-border: transparent !default;
+
+$pagination-primary-disabled-color: $gray-lighter !default;
+$pagination-primary-disabled-bg: lighten($brand-primary, 15%) !default;
+$pagination-primary-disabled-border: transparent !default;
+
 //== Pager
 //
 //##

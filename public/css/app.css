@@ -7278,6 +7278,37 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .popover {
   color: #2C3E50; }
 
+.pagination-primary > li > a,
+.pagination-primary > li > span {
+  color: #fff;
+  background-color: #2C3E50;
+  border: 1px solid transparent; }
+
+.pagination-primary > li > a:hover, .pagination-primary > li > a:focus,
+.pagination-primary > li > span:hover,
+.pagination-primary > li > span:focus {
+  color: #fff;
+  background-color: #11181f;
+  border-color: transparent; }
+
+.pagination-primary > .active > a, .pagination-primary > .active > a:hover, .pagination-primary > .active > a:focus,
+.pagination-primary > .active > span,
+.pagination-primary > .active > span:hover,
+.pagination-primary > .active > span:focus {
+  color: #fff;
+  background-color: #11181f;
+  border-color: transparent; }
+
+.pagination-primary > .disabled > span,
+.pagination-primary > .disabled > span:hover,
+.pagination-primary > .disabled > span:focus,
+.pagination-primary > .disabled > a,
+.pagination-primary > .disabled > a:hover,
+.pagination-primary > .disabled > a:focus {
+  color: #ecf0f1;
+  background-color: #476481;
+  border-color: transparent; }
+
 body {
   background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/handmadepaper.png);
   padding-top: 60px;
@@ -7294,5 +7325,9 @@ body {
     font-size: 3rem;
     padding: 0;
     margin: 0; }
+
+.pagination {
+  padding: 0;
+  margin: 0; }
 
 /*# sourceMappingURL=app.css.map */

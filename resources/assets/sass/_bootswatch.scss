@@ -334,3 +334,48 @@ a.list-group-item {
 .popover {
     color: $text-color;
 }
+
+.pagination-primary {
+    > li {
+        > a,
+        > span {
+            color: $pagination-primary-color;
+            background-color: $pagination-primary-bg;
+            border: 1px solid $pagination-primary-border;
+        }
+    }
+
+    > li > a,
+    > li > span {
+        &:hover,
+        &:focus {
+            color: $pagination-primary-hover-color;
+            background-color: $pagination-primary-hover-bg;
+            border-color: $pagination-primary-hover-border;
+        }
+    }
+
+    > .active > a,
+    > .active > span {
+        &,
+        &:hover,
+        &:focus {
+            color: $pagination-primary-active-color;
+            background-color: $pagination-primary-active-bg;
+            border-color: $pagination-primary-active-border;
+        }
+    }
+
+    > .disabled {
+        > span,
+        > span:hover,
+        > span:focus,
+        > a,
+        > a:hover,
+        > a:focus {
+            color: $pagination-primary-disabled-color;
+            background-color: $pagination-primary-disabled-bg;
+            border-color: $pagination-primary-disabled-border;
+        }
+    }
+}
