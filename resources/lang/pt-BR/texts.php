@@ -11,7 +11,7 @@ return [
     'flag' => 'Bandeira',
     'locale' => 'Línguagem',
     'locales' => 'Línguagens',
-    'locales-list' => 'Lista de Línguagens',
+    'locales-list' => 'Lista de línguagens disponíveis',
     'translation' => 'Tradução',
     'translations' => 'Traduções',
     'translations-list' => 'Lista de Traduções',
