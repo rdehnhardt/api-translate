@@ -28,7 +28,8 @@ class TranslatesController extends Controller
     public function edit($id)
     {
         $record = Translate::find($id);
+        $locales = Locale::all();
 
-        return view('translates.edit', compact('record'));
+        return view('translates.edit', compact('record', 'locales'));
     }
 }

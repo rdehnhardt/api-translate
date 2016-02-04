@@ -12,7 +12,18 @@
                     </div>
                     <div class="panel-body">
                         <p><strong>{{ trans('texts.text-translate') }}</strong>: {{ $record->key }}</p>
+
                         <hr />
+                        @foreach($locales as $locale)
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">{{ $locale->label }} ({{ $locale->name }})</label>
+                                <textarea class="form-control">{{ $locale->message($record) }}</textarea>
+                            </div>
+                        @endforeach
+
+                        <button class="btn btn-sm btn-primary">
+                            <i class="fa fa-floppy-o"></i> {{ trans('texts.save') }}
+                        </button>
                     </div>
                 </div>
             </div>

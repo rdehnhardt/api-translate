@@ -28,6 +28,21 @@ class Locale extends Authenticatable
      */
     public function messages()
     {
-        return $this->hasMany('App\Models\Messages');
+        return $this->hasMany('App\Models\Message');
+    }
+
+    /**
+     * @param Translate $translate
+     * @return string
+     */
+    public function message(Translate $translate)
+    {
+        $message = $this->messages()->whereTranslateId($translate->id)->first();
+
+        if ($message) {
+            return $message->message;
+        }
+
+        return '';
     }
 }
