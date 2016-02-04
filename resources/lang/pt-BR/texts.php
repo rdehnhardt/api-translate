@@ -5,6 +5,7 @@ return [
     'back' => 'Voltar',
     'save' => 'Salvar',
     'label' => 'Etiqueta',
+    'remove' => 'Remover',
     'name' => 'Nome',
     'home' => 'Início',
     'language' => 'Idioma',

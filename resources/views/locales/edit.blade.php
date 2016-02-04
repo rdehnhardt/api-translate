@@ -3,9 +3,13 @@
 @section('page-title', trans('texts.locales'))
 
 @section('page-actions')
-    <a href="{{ route('locales.index') }}" class="btn btn-sm btn-default">
-        <i class="fa fa-arrow-left"></i> {{ trans('texts.back') }}
-    </a>
+    {!! Form::open(['method' => 'get', 'route' => 'locales.index']) !!}
+    {!! Form::button('<i class="fa fa-arrow-left"></i> ' . trans('texts.back'), ['type' => 'submit', 'class' => 'btn btn-default btn-sm']) !!}
+    {!! Form::close() !!}
+
+    {!! Form::open(['method' => 'delete', 'data-confirm' => 'You will not be able to recover this record!', 'route' => ['locales.destroy', $record->id]]) !!}
+    {!! Form::button('<i class="fa fa-trash"></i> ' . trans('texts.remove'), ['type' => 'submit', 'class' => 'btn btn-danger btn-sm']) !!}
+    {!! Form::close() !!}
 @stop
 
 @section('content')

@@ -5,6 +5,7 @@ return [
     'back' => 'Back',
     'save' => 'Save',
     'label' => 'Label',
+    'remove' => 'Remove',
     'name' => 'Name',
     'home' => 'Home',
     'language' => 'Language',
