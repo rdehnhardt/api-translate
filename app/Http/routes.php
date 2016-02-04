@@ -6,6 +6,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     });
 
     Route::resource('locales', 'LocalesController');
+
+    Route::get('translates', ['as' => 'translates.index', 'uses' => 'TranslatesController@index']);
+    Route::get('translates/{id}', ['as' => 'translates.edit', 'uses' => 'TranslatesController@edit']);
 });
 
 Route::group(['middleware' => 'api', 'prefix' => 'api', 'namespace' => 'Api'], function () {

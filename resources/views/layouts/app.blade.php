@@ -26,7 +26,7 @@
 </head>
 
 <body id="app-layout">
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <!-- Collapsed Hamburger -->
@@ -44,8 +44,9 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             @if (!Auth::guest())
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ route('locales.index') }}">Locales</a></li>
+                    <li><a href="{{ url('/') }}">{{ trans('texts.home') }}</a></li>
+                    <li><a href="{{ route('locales.index') }}">{{ trans('texts.locales') }}</a></li>
+                    <li><a href="{{ route('translates.index') }}">{{ trans('texts.translations') }}</a></li>
                 </ul>
             @endif
 
@@ -68,17 +69,32 @@
     </div>
 </nav>
 
-    @if (Session::has('message') && Session::get('alert'))
+@if (!Auth::guest())
+    <div class="page-title">
         <div class="container-fluid">
-            <div class="alert alert-{!! Session::get('alert') !!}">
-                <p>{{ Session::get('message') }}</p>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <h1>@yield('page-title')</h1>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                    @yield('page-actions')
+                </div>
             </div>
         </div>
+    </div>
+@endif
+
+@if (Session::has('message') && Session::get('alert'))
+    <div class="container-fluid">
+        <div class="alert alert-{!! Session::get('alert') !!}">
+            <p>{{ Session::get('message') }}</p>
+        </div>
+    </div>
     @endif
 
     @yield('content')
 
-    <!-- JavaScripts -->
+            <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}

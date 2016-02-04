@@ -1,11 +1,19 @@
 @extends('layouts.app')
 
+@section('page-title', trans('texts.locales'))
+
+@section('page-actions')
+    <a href="{{ route('locales.index') }}" class="btn btn-sm btn-default">
+        <i class="fa fa-arrow-left"></i> {{ trans('texts.back') }}
+    </a>
+@stop
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Locales</div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">{{ trans('texts.locales') }}</div>
 
                     <div class="panel-body">
                         {!! Form::model($record, ['route' => ['locales.update', $record->id], 'method' => 'put']) !!}
@@ -31,7 +39,7 @@
                             <div class="row">
                             	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     {!! Form::openFormActions() !!}
-                                    {!! Form::button('<i class="fa fa-floppy-o"></i> Save', ['class' => 'btn btn-primary form-action', 'type' => 'submit']) !!}
+                                    {!! Form::button('<i class="fa fa-floppy-o"></i> Save', ['class' => 'btn btn-sm btn-primary form-action', 'type' => 'submit']) !!}
                                     {!! Form::closeFormActions() !!}
                             	</div>
                             </div>
