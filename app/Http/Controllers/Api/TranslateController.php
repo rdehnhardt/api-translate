@@ -37,7 +37,7 @@ class TranslateController extends Controller
             $message = $this->getMessage($translate, $locale);
 
             if ($message) {
-                return response($message->message);
+                return (new Response($message->message, 200))->header('Content-Type', 'text/html');
             }
         }
 

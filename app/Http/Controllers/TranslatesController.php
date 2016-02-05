@@ -52,16 +52,18 @@ class TranslatesController extends Controller
         try {
             if (count($request->get('messages'))) {
                 foreach ($request->get('messages') as $locale => $text) {
-                    $message = Message::whereTranslateId($id)->whereLocaleId($locale)->first();
+                    if ($text) {
+                        $message = Message::whereTranslateId($id)->whereLocaleId($locale)->first();
 
-                    if (!$message) {
-                        $message = new Message();
-                        $message->locale_id = $locale;
-                        $message->translate_id = $id;
+                        if (!$message) {
+                            $message = new Message();
+                            $message->locale_id = $locale;
+                            $message->translate_id = $id;
+                        }
+
+                        $message->message = $text;
+                        $message->save();
                     }
-
-                    $message->message = $text;
-                    $message->save();
                 }
             }
 
