@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Locale;
 use App\Models\Message;
 use App\Models\Translate;
+use Illuminate\Http\Response;
 use Request;
 
 class TranslateController extends Controller
@@ -36,11 +37,11 @@ class TranslateController extends Controller
             $message = $this->getMessage($translate, $locale);
 
             if ($message) {
-                return ['status' => true, 'message' => $message->message];
+                return response($message->message);
             }
         }
 
-        return ['status' => false, 'message' => 'Not found.'];
+        return response('');
     }
 
     /**
